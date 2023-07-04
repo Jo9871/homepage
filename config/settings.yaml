@@ -1,0 +1,22 @@
+---
+# For configuration options and examples, please see:
+# https://gethomepage.dev/en/configs/settings
+
+title: JAG Home Page
+headerStyle: boxed
+providers:
+  openweathermap: openweathermapapikey
+  weatherapi: weatherapiapikey
+
+quicklaunch:
+  searchDescriptions: true
+  hideInternetSearch: true
+  hideVisitURL: true
+
+layout:
+  Quick Google Shortcuts:
+    style: row
+    columns: 4
+    icon: https://upload.wikimedia.org/wikipedia/commons/a/a5/Apps-Google-Chrome-App-List-icon.png
+  Financial Info:
+    icon: https://finance.jagwebsites.xyz/favicon.ico

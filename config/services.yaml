@@ -1,0 +1,60 @@
+---
+# For configuration options and examples, please see:
+# https://gethomepage.dev/en/configs/services
+
+- Quick Google Shortcuts:
+    - Google:
+        href: https://www.google.com/
+        ping: https://www.google.com/
+        icon: https://www.google.com/favicon.ico
+        description: Google Search - Search Engine
+    - GDrive:
+        href: https://drive.google.com/
+        ping: https://drive.google.com/
+        icon: https://drive.google.com/favicon.ico
+        description: Google Drive - File Managment
+    - GMail:
+        href: https://mail.google.com/
+        ping: https://mail.google.com/
+        icon: https://mail.google.com/favicon.ico
+        description: Google Mail (Gmail) - Email Client
+    - GCal:
+        href: https://calendar.google.com/
+        ping: https://calendar.google.com/
+        icon: https://ssl.gstatic.com/calendar/images/dynamiclogo_2020q4/calendar_4_2x.png
+        description: Google Calendar - Calendar Client
+
+- Financial Info:
+    - JAG Finance:
+        href: https://finance.jagwebsites.xyz
+        ping: https://finance.jagwebsites.xyz
+        description: Financial tracker from JAG Services.
+        icon: https://finance.jagwebsites.xyz/favicon.ico
+    - Actual Budget:
+        href: https://actual.jagwebsites.xyz
+        ping: https://actual.jagwebsites.xyz
+        description: External budget managing software.
+        icon: https://actual.jagwebsites.xyz/favicon.ico
+    - GhostFolio:
+        href: https://ghostfolio.jagwebsites.xyz
+        ping: https://ghostfolio.jagwebsites.xyz
+        description: Stock managment app.
+        icon: https://ghostfolio.jagwebsites.xyz/assets/ghost.svg
+        widget:
+          type: ghostfolio
+          fields:
+            ["gross_percent_today", "gross_percent_1y", "gross_percent_max"]
+          url: https://ghostfolio.jagwebsites.xyz
+          key: eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjI2OWYxZmJmLTM0MTYtNDJlNS1iYmVhLTEyODJiY2I2N2YxOSIsImlhdCI6MTY4ODQ5NDEyMCwiZXhwIjoxNzA0MDQ2MTIwfQ.7sOUpWhT8qhDtZwXue3OS1VzL12MJV5Dajup5DTV6mc
+
+- Monitoring:
+    - JAG Uptime:
+        href: https://uptime.jagwebsites.xyz
+        ping: https://uptime.jagwebsites.xyz
+        description: Uptime monitor from JAG Services
+        icon: https://uptime.jagwebsites.xyz/favicon.ico
+        widget:
+          type: uptimekuma
+          fields: ["up", "down", "uptime", "incident"]
+          url: https://uptime.jagwebsites.xyz
+          slug: jag-services

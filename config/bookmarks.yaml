@@ -1,0 +1,39 @@
+---
+# For configuration options and examples, please see:
+# https://gethomepage.dev/en/configs/bookmarks
+
+- Developer:
+    - Github - My Repos:
+        - abbr: GH
+          href: https://github.com/Jo9871?tab=repositories
+          icon: https://avatars.githubusercontent.com/u/79065725?v=4
+    - Github - Home Page:
+        - abbr: GH
+          href: https://github.com/
+          icon: https://github.com/favicon.ico
+
+- Social:
+    - Reddit:
+        - abbr: RE
+          href: https://reddit.com/
+          icon: https://reddit.com/favicon.ico
+
+- Entertainment:
+    - YouTube:
+        - abbr: YT
+          href: https://youtube.com/
+          icon: https://www.youtube.com/favicon.ico
+    - Netflix:
+        - abbr: NF
+          href: https://netflix.com/
+          icon: https://netflix.com/favicon.ico
+
+- JAG Home Pages:
+    - Main:
+        - abbr: M
+          href: https://main.homepages.jagwebsites.xyz/
+          icon: https://lh5.googleusercontent.com/Tfi8pev2bERfVF2TZg5Rj1KvGUuhYr_FEwd-XeO_oRbV-ce2C78tLnuAKfo4lw02dOC3cJVOUO1UYdWqXWJ2mIc=w16383
+    - Open University:
+        - abbr: OU
+          href: https://ou.homepages.jagwebsites.xyz/
+          icon: https://lh6.googleusercontent.com/1iNBjMpWdgGSVpnVS9sSOGqvKpeC142vGvUzR-O_DIzvHaS0-iWmTQOnPKS9buiZvNg6az0zEQKuday3UgbRYSo=w16383
