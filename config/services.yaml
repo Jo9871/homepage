@@ -47,3 +47,8 @@
           fields: ["up", "down", "uptime", "incident"]
           url: https://uptime.jagwebsites.xyz
           slug: jag-services
+    - JAG Analytics:
+        href: https://analytics.jagwebsites.xyz
+        ping: https://analytics.jagwebsites.xyz
+        description: Analytics service and dashboard from JAG Services
+        icon: https://analytics.jagwebsites.xyz/favicon.ico
