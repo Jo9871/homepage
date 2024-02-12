@@ -35,17 +35,6 @@
         ping: https://actual.jagwebsites.xyz
         description: External budget managing software.
         icon: https://actual.jagwebsites.xyz/favicon.ico
-    - GhostFolio:
-        href: https://ghostfolio.jagwebsites.xyz
-        ping: https://ghostfolio.jagwebsites.xyz
-        description: Stock managment app.
-        icon: https://ghostfolio.jagwebsites.xyz/assets/ghost.svg
-        widget:
-          type: ghostfolio
-          fields:
-            ["gross_percent_today", "gross_percent_1y", "gross_percent_max"]
-          url: https://ghostfolio.jagwebsites.xyz
-          key: eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjI2OWYxZmJmLTM0MTYtNDJlNS1iYmVhLTEyODJiY2I2N2YxOSIsImlhdCI6MTY4ODQ5NDEyMCwiZXhwIjoxNzA0MDQ2MTIwfQ.7sOUpWhT8qhDtZwXue3OS1VzL12MJV5Dajup5DTV6mc
 
 - Monitoring:
     - JAG Uptime:
