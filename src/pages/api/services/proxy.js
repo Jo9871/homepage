@@ -44,15 +44,19 @@ export default async function handler(req, res) {
         if (req.query.query && (mappingParams || optionalParams)) {
           const queryParams = JSON.parse(req.query.query);
 
-          let filteredOptionalParams = []
-          if (optionalParams) filteredOptionalParams = optionalParams.filter(p => queryParams[p] !== undefined);
-          
+          let filteredOptionalParams = [];
+          if (optionalParams) filteredOptionalParams = optionalParams.filter((p) => queryParams[p] !== undefined);
+
           let params = [];
           if (mappingParams) params = params.concat(mappingParams);
           if (filteredOptionalParams) params = params.concat(filteredOptionalParams);
-          
+
           const query = new URLSearchParams(params.map((p) => [p, queryParams[p]]));
           req.query.endpoint = `${req.query.endpoint}?${query}`;
+        }
+
+        if (mapping?.headers) {
+          req.extraHeaders = mapping.headers;
         }
 
         if (endpointProxy instanceof Function) {

@@ -5,8 +5,8 @@ import { SettingsContext } from "utils/contexts/settings";
 import { ThemeContext } from "utils/contexts/theme";
 
 const iconSetURLs = {
-  'mdi': "https://cdn.jsdelivr.net/npm/@mdi/svg@latest/svg/",
-  'si' : "https://cdn.jsdelivr.net/npm/simple-icons@latest/icons/",
+  mdi: "https://cdn.jsdelivr.net/npm/@mdi/svg@latest/svg/",
+  si: "https://cdn.jsdelivr.net/npm/simple-icons@latest/icons/",
 };
 
 export default function ResolvedIcon({ icon, width = 32, height = 32, alt = "logo" }) {
@@ -33,11 +33,23 @@ export default function ResolvedIcon({ icon, width = 32, height = 32, alt = "log
   }
 
   // check mdi- or si- prefixed icons
-  const prefix = icon.split("-")[0]
+  const prefix = icon.split("-")[0];
 
   if (prefix in iconSetURLs) {
-    // get icon source
-    const iconName = icon.replace(`${prefix}-`, "").replace(".svg", "");
+    // default to theme setting
+    let iconName = icon.replace(`${prefix}-`, "").replace(".svg", "");
+    let iconColor =
+      settings.iconStyle === "theme"
+        ? `rgb(var(--color-${theme === "dark" ? 300 : 900}) / var(--tw-text-opacity, 1))`
+        : "linear-gradient(180deg, rgb(var(--color-logo-start)), rgb(var(--color-logo-stop)))";
+
+    // use custom hex color if provided
+    const colorMatches = icon.match(/[#][a-f0-9][a-f0-9][a-f0-9][a-f0-9][a-f0-9][a-f0-9]$/i);
+    if (colorMatches?.length) {
+      iconName = icon.replace(`${prefix}-`, "").replace(".svg", "").replace(`-${colorMatches[0]}`, "");
+      iconColor = `${colorMatches[0]}`;
+    }
+
     const iconSource = `${iconSetURLs[prefix]}${iconName}.svg`;
 
     return (
@@ -45,11 +57,9 @@ export default function ResolvedIcon({ icon, width = 32, height = 32, alt = "log
         style={{
           width,
           height,
-          maxWidth: '100%',
-          maxHeight: '100%',
-          background: settings.iconStyle === "theme" ?
-            `rgb(var(--color-${ theme === "dark" ? 300 : 900 }) / var(--tw-text-opacity, 1))` :
-            "linear-gradient(180deg, rgb(var(--color-logo-start)), rgb(var(--color-logo-stop)))",
+          maxWidth: "100%",
+          maxHeight: "100%",
+          background: `${iconColor}`,
           mask: `url(${iconSource}) no-repeat center / contain`,
           WebkitMask: `url(${iconSource}) no-repeat center / contain`,
         }}
@@ -57,7 +67,6 @@ export default function ResolvedIcon({ icon, width = 32, height = 32, alt = "log
     );
   }
 
- 
   // fallback to dashboard-icons
   if (icon.endsWith(".svg")) {
     const iconName = icon.replace(".svg", "");
@@ -71,13 +80,13 @@ export default function ResolvedIcon({ icon, width = 32, height = 32, alt = "log
           height,
           objectFit: "contain",
           maxHeight: "100%",
-          maxWidth: "100%"
+          maxWidth: "100%",
         }}
         alt={alt}
       />
     );
   }
-  
+
   const iconName = icon.replace(".png", "");
   return (
     <Image
@@ -89,7 +98,7 @@ export default function ResolvedIcon({ icon, width = 32, height = 32, alt = "log
         height,
         objectFit: "contain",
         maxHeight: "100%",
-        maxWidth: "100%"
+        maxWidth: "100%",
       }}
       alt={alt}
     />
