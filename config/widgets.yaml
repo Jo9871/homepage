@@ -2,11 +2,11 @@
 # For configuration options and examples, please see:
 # https://gethomepage.dev/en/configs/widgets
 
-- resources:
-    cpu: true
-    memory: true
-    uptime: true
-    units: metric
+# - resources:
+#     cpu: true
+#     memory: true
+#     uptime: true
+#     units: metric
 
 - search:
     provider: [duckduckgo, google]
