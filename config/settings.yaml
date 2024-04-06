@@ -8,6 +8,9 @@ providers:
   openweathermap: openweathermapapikey
   weatherapi: weatherapiapikey
 
+theme: dark # or light
+color: slate
+
 quicklaunch:
   searchDescriptions: true
   hideInternetSearch: true
